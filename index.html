@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book - Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            background-image: url("https://tse3.mm.bing.net/th?id=OIP.Lg0C9ylof5k3R471wg0HiQHaDe&pid=Api&P=0&h=220");
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #f2f3f3;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="submit"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Return Book Form</h2>
+        <form action="/submit-return" method="POST">
+            <!-- Borrower Information -->
+            <div class="form-group">
+                <label for="borrowerId">Borrower ID:</label>
+                <input type="text" id="borrowerId" name="borrowerId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="borrowerName">Borrower Name:</label>
+                <input type="text" id="borrowerName" name="borrowerName" required>
+            </div>
+
+            <!-- Book Information -->
+            <div class="form-group">
+                <label for="bookId">Book ID:</label>
+                <input type="text" id="bookId" name="bookId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" id="bookTitle" name="bookTitle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="returnDate">Return Date:</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+            </div>
+
+            <!-- Return Status -->
+            <div class="form-group">
+                <label for="returnCondition">Book Condition:</label>
+                <select id="returnCondition" name="returnCondition" required>
+                    <option value="" disabled selected>Select Condition</option>
+                    <option value="Good">Good</option>
+                    <option value="Damaged">Damaged</option>
+                    <option value="Lost">Lost</option>
+                </select>
+            </div>
+
+            <!-- Late Fees -->
+            <div class="form-group">
+                <label for="lateFees">Late Fees (if any):</label>
+                <input type="text" id="lateFees" name="lateFees" placeholder="Enter amount or 0 if none">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Submit Return">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
